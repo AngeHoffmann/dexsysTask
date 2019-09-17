@@ -1,4 +1,6 @@
 *.xml
 *.iml
 *.class
+*.idea
+*.lst
 !pom.xml
