@@ -97,7 +97,7 @@ public class Program {
     }
 
     private void initArray() {
-        array = generator.generateArray(20, 0, 30);
+        array = generator.generateArray(20, 1, 30);
 
         dividedByThree = Arrays.stream(array).
                 boxed().
