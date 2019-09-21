@@ -3,8 +3,6 @@ import java.util.Random;
 
 /**
  * Класс для генерации начального массива чисел.
- *
- * @author hoffmann
  */
 public class Generator {
     public int[] generateArray(long limit, int low, int high) {

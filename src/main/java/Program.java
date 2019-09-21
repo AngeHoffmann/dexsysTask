@@ -3,6 +3,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * Основной класс приложения.
+ */
 public class Program {
     private Scanner sc;
     private Generator generator;
@@ -81,6 +84,7 @@ public class Program {
 
     private String read() {
         String choice;
+
         while (true) {
             try {
                 choice = sc.nextLine();
@@ -118,31 +122,34 @@ public class Program {
         list.stream().
                 map(x -> x + " ").
                 forEach(System.out::print);
+
         System.out.println("\n");
     }
 
     private void printAllLists() {
-        System.out.print("Divided by 3 list: ");
+        System.out.print("List X: ");
         printList(dividedByThree);
 
-        System.out.print("Divided by 7 list: ");
+        System.out.print("List S: ");
         printList(dividedBySeven);
 
-        System.out.print("Divided by 21 list: ");
+        System.out.print("List M: ");
         printList(dividedByTwentyOne);
     }
 
     private void anyMore() {
         long counter;
+
         counter = Arrays.stream(array).
                 boxed().
                 filter(x -> (x % 3 != 0) && (x % 7 != 0)).
 //                peek(x -> System.out.format("anyMore debug: %d%n", x)).
-        count();
+                count();
+
         if (counter > 0) {
-            System.out.println("true");
+            System.out.println(true);
         } else {
-            System.out.println("false");
+            System.out.println(false);
         }
     }
 
@@ -170,12 +177,17 @@ public class Program {
 
     private void help() {
         System.out.println("------HELPER-------");
-        System.out.println("[init] - команда для инициализация списков набором значений array (array генерируется рандомно из 20 чисел от 0 до 30)");
-        System.out.println("[print] - команда для вывода на экран всех списков");
-        System.out.println("[print X] - команда для вывода на экран списка с числами, которые можно поделить без остатка на 3");
-        System.out.println("[print S] - команда для вывода на экран списка с числами, которые можно поделить без остатка на 7");
-        System.out.println("[print M] - команда для вывода на экран списка с числами, которые можно поделить без остатка на 21");
-        System.out.println("[anyMore] - команда для вывода на экран всех значений, не вошедших ни в один список");
-
+        System.out.println("[init]----- Команда для инициализация списков набором значений array (array генерируется рандомно из 20 чисел от 0 до 30)");
+        System.out.println("[print]---- Команда для вывода на экран всех списков");
+        System.out.println("[print X]-- Команда для вывода на экран списка с числами, которые можно поделить без остатка на 3");
+        System.out.println("[print S]-- Команда для вывода на экран списка с числами, которые можно поделить без остатка на 7");
+        System.out.println("[print M]-- Команда для вывода на экран списка с числами, которые можно поделить без остатка на 21");
+        System.out.println("[anyMore]-- Команда выводит на экран \"true\" если были значения, не вошедшие ни в один список и \"false\" если нет");
+        System.out.println("[clear X]-- Команда для чистки списка листа с числами, которые можно поделить без остатка на 3");
+        System.out.println("[clear S]-- Команда для чистки списка листа с числами, которые можно поделить без остатка на 7");
+        System.out.println("[clear M]-- Команда для чистки списка листа с числами, которые можно поделить без остатка на 21");
+        System.out.println("[merge]---- Команда для того, чтобы слить все списки в один вывести на экран и очистить все списки");
+        System.out.println("[exit]----- Выход из меню");
+        System.out.println("-------------------");
     }
 }

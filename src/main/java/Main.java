@@ -1,6 +1,6 @@
 
 /**
- * Основной класс для запуска приложения.
+ * Класс для запуска приложения.
  */
 public class Main {
     public static void main(String[] args) {
